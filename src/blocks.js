@@ -227,4 +227,48 @@ export default function (editor, opt = {}) {
       style: {height: '350px'}
     },
   });
+
+  //h1
+  toAdd('h1-block') && bm.add('h1-block', {
+    label: c.labelHead1,
+    content: '<h1>HEADING 1</h1>',
+    category: 'Heading',
+    attributes: {
+      title: 'Insert h1 block',
+      class: 'fa fa-header'
+    }
+  });
+
+  //h2
+  toAdd('h2-block') && bm.add('h2-block', {
+    label: c.labelHead2,
+    content: '<h2>HEADING 2</h2>',
+    category: 'Heading',
+    attributes: {
+      title: 'Insert h2 block',
+      class: 'fa fa-header'
+    }
+  });
+
+  //h3
+  toAdd('h3-block') && bm.add('h3-block', {
+    label: c.labelHead3,
+    content: '<h3>HEADING 3</h3>',
+    category: 'Heading',
+    attributes: {
+      title: 'Insert h3 block',
+      class: 'fa fa-header'
+    }
+  });
+
+  //h4
+  toAdd('h4-block') && bm.add('h4-block', {
+    label: c.labelHead4,
+    content: '<h4>HEADING 4</h4>',
+    category: 'Heading',
+    attributes: {
+      title: 'Insert h4 block',
+      class: 'fa fa-header'
+    }
+  });
 }

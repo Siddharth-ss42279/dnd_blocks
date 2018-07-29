@@ -2,7 +2,7 @@ import grapesjs from 'grapesjs';
 
 export default grapesjs.plugins.add('gjs-blocks-basic', (editor, opts = {}) => {
   const config = {
-    blocks: ['column1', 'column2', 'column3', 'column3-7', 'text', 'link', 'image', 'video', 'map'],
+    blocks: ['column1', 'column2', 'column3', 'column3-7', 'text', 'link', 'image', 'video', 'map', 'h1-block', 'h2-block', 'h3-block', 'h4-block'],
     flexGrid: 0,
     stylePrefix: 'gjs-',
     addBasicStyle: true,
@@ -16,6 +16,10 @@ export default grapesjs.plugins.add('gjs-blocks-basic', (editor, opts = {}) => {
     labelImage: 'Image',
     labelVideo: 'Video',
     labelMap: 'Map',
+    labelHead1: 'Heading 1',
+    labelHead2: 'Heading 2',
+    labelHead3: 'Heading 3',
+    labelHead4: 'Heading 4',
     ...opts
   };
 
