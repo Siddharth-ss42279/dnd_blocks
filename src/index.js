@@ -20,11 +20,13 @@ export default grapesjs.plugins.add('gjs-blocks-basic', (editor, opts = {}) => {
     labelHead2: 'Heading 2',
     labelHead3: 'Heading 3',
     labelHead4: 'Heading 4',
+    labelHtml: 'html-code',
     ...opts
   };
 
   // Add blocks
   const loadBlocks = require('./blocks');
+  const loadHtmlBlock = require('./htmlblock');
   loadBlocks.default(editor, config);
 
 });
