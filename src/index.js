@@ -2,7 +2,7 @@ import grapesjs from 'grapesjs';
 
 export default grapesjs.plugins.add('gjs-blocks-basic', (editor, opts = {}) => {
   const config = {
-    blocks: ['column1', 'column2', 'column3', 'column3-7', 'text', 'link', 'image', 'video', 'map', 'h1-block', 'h2-block', 'h3-block', 'h4-block'],
+    blocks: ['column1', 'column2', 'column3', 'column3-7', 'text', 'link', 'image', 'video', 'map', 'h1-block', 'h2-block', 'h3-block', 'h4-block', 'html-code'],
     flexGrid: 0,
     stylePrefix: 'gjs-',
     addBasicStyle: true,
@@ -26,7 +26,16 @@ export default grapesjs.plugins.add('gjs-blocks-basic', (editor, opts = {}) => {
 
   // Add blocks
   const loadBlocks = require('./blocks');
-  const loadHtmlBlock = require('./htmlblock');
   loadBlocks.default(editor, config);
+
+  //accordian style
+  const categories = editor.BlockManager.getCategories();
+  categories.each(category => {
+  	category.set('open', false).on('change:open', opened => {
+  		opened.get('open') && categories.each(category => {
+              category !== opened && category.set('open', false)
+          })
+  	})
+  });
 
 });
